@@ -1,9 +1,6 @@
 #include <iostream> 
-#include <vector> // for dynamic array [tb used in ajacency list]
-#include <string>
-#include <queue> // for traversal
+#include <vector> // as dynamic array [tb used in ajacency list]
 #include <climits> // to use INT_MAX
-#include <algorithm> // functions like reverse
 using namespace std;
 
 /*
@@ -135,22 +132,31 @@ public:
         }
 
         /*
-            distance initially infinite (can achieve using INT_MAX)
+            distances initially infinite (can achieve using INT_MAX)
             store distance in dist vector
             create parent vector to remember paths
 
         */
         int n = cities.size();
-        vector<int> dist(n, INT_MAX); // create a vector of n length and initialize each val large
-        vector<int> parent(n, -1); // create another vector of n l and give each -1 (indicating no city)
-        
-        // traversal
+        vector<int> dist;
+        vector<int> parent;
+
+        // populte dist and parent
+        for (int i = 0; i < n; i++) {
+            dist.push_back(INT_MAX);
+        }
+        for (int i = 0; i < n; i++) {
+            parent.push_back(-1); // -1 denotes no city
+        }
+        // traversal code 
     }
 };
 
 int main() {
     Navigation nav;
 
+    // add cities as per assignment
+    // didnt feel the need to implement input as only 6 in requirement
     nav.addCity("Lahore");
     nav.addCity("Islamabad");
     nav.addCity("Multan");
